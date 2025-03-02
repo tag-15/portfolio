@@ -1,0 +1,45 @@
+html body{
+    background-color: #e3f2fd;
+}
+
+.navbar {
+    background-color: #e3f2fd;
+}
+
+.image-thumbnail{
+    width:200px;
+    border-radius: 100%;
+    border-style: inset;
+    border-color: rgb(237, 211, 116);
+}
+
+.text-brown{
+    color:brown
+}
+
+.vitap{
+    width:100px
+}
+
+.text-purple{
+    color:#890dfd
+}
+
+.exp{
+    width:500px
+}
+
+.card{
+    width: 20rem;
+}
+
+.azure{
+    width:300px;
+}
+.oracle{
+    width:300px;
+}
+
+.text-orange {
+    color: #ac7500
+}
