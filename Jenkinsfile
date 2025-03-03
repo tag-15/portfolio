@@ -26,7 +26,7 @@ pipeline{
                 }
             }
             environment{
-                AWS_S3_BUCKET = ''
+                AWS_S3_BUCKET = 'portfolio-030225'
             }
             steps{
                 withCredentials([usernamePassword(credentialsId: 'aws-s3', passwordVariable: 'AWS_SECRET_ACCESS_KEY', usernameVariable: 'AWS_ACCESS_KEY_ID')]) {
