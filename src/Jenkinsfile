@@ -33,11 +33,12 @@ pipeline{
                 AWS_S3_BUCKET = ''
             }
             steps{
-                // with credentials
-                sh '''
-                    aws --version
-                    aws s3 sync dist s3://$AWS_S3_BUCKET
-                '''
+                withCredentials([usernamePassword(credentialsId: 'aws-s3', passwordVariable: 'AWS_SECRET_ACCESS_KEY', usernameVariable: 'AWS_ACCESS_KEY_ID')]) {
+                    sh '''
+                        aws --version
+                        aws s3 sync dist s3://$AWS_S3_BUCKET
+                    '''
+                }
             }
         }
     }
