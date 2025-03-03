@@ -1,0 +1,44 @@
+pipeline{
+    agent any{
+        environment{
+
+        }
+    }
+    stages{
+        stage('Build'){
+            agent{
+                docker{
+                    image 'node:22-alpine'
+                    reuseNode true
+                }
+            }
+            steps{
+                sh '''
+                    node --version
+                    npm --version
+                    npm ci
+                    npm run build
+                '''
+            }
+        }
+        stage('S3'){
+            agent{
+                docker{
+                    image 'amazon/aws-cli'
+                    args "--entrypoint=''"
+                    reuseNode true
+                }
+            }
+            environment{
+                AWS_S3_BUCKET = ''
+            }
+            steps{
+                // with credentials
+                sh '''
+                    aws --version
+                    aws s3 sync dist s3://$AWS_S3_BUCKET
+                '''
+            }
+        }
+    }
+}
