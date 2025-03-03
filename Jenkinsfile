@@ -17,6 +17,19 @@ pipeline{
                 '''
             }
         }
+        stage('Test'){
+            agent{
+                docker{
+                    image 'node:22-alpine'
+                    reuseNode true
+                }
+            }
+            steps{
+                sh '''
+                    test -f dist/index.html
+                '''
+            }
+        }
         stage('S3'){
             agent{
                 docker{
