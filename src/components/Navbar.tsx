@@ -43,7 +43,7 @@ const Navbar = () => {
         <a
           className="navbar-brand fw-bold"
           href="#"
-          onClick={(e) => scrollToSection("introduction")}
+          onClick={() => scrollToSection("introduction")}
         >
           <span className="text-primary">T</span>RG
         </a>
