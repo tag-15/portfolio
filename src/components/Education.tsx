@@ -1,34 +1,87 @@
 import vitap from "../assets/vitap.png";
 import uta from "../assets/uta.jpg";
+
 const Education = () => {
+  const education = [
+    {
+      school: "University of Texas at Arlington",
+      degree: "Master of Science",
+      field: "Computer Science",
+      year: "2025",
+      logo: uta,
+      gpa: "3.8/4.0",
+      location: "Arlington, TX",
+    },
+    {
+      school: "VIT-AP University",
+      degree: "Bachelor of Technology",
+      field: "Computer Science and Engineering",
+      year: "2022",
+      logo: vitap,
+      gpa: "8.5/10.0",
+      location: "Amaravati, India",
+    },
+  ];
+
   return (
-    <div className="container lead">
-      <h4>Education</h4>
-      <p className="mt-4">
-        <img className="vitap rounded float-left" src={uta} />
-        <span className="ml-2">
-          {" "}
-          &nbsp;<strong className="text-purple">Master of Science</strong> in
-          Computer Science.
-        </span>
-      </p>
-      <p>
-        <strong>Earned - 2025</strong>
-      </p>
-      <p className="mt-4">
-        <img className="vitap" src={vitap} />
-        <span className="ml-2">
-          {" "}
-          &nbsp;<strong className="text-purple">
-            Bachelor of Technology
-          </strong>{" "}
-          in Computer Science and Engineering.
-        </span>
-      </p>
-      <p>
-        <strong>Earned - 2022</strong>
-      </p>
-      <hr />
+    <div id="education" className="section animate-fade-in">
+      <div className="container">
+        <h2 className="text-center mb-5">Education</h2>
+
+        <div className="row justify-content-center g-4">
+          {education.map((edu, index) => (
+            <div key={index} className="col-md-6">
+              <div className="card h-100 border-0 shadow-sm">
+                <div className="card-body p-4">
+                  <div className="d-flex align-items-center mb-4">
+                    <img
+                      src={edu.logo}
+                      alt={edu.school}
+                      className="me-3 rounded"
+                      style={{
+                        width: "64px",
+                        height: "64px",
+                        objectFit: "contain",
+                      }}
+                    />
+                    <div>
+                      <h3 className="h5 mb-1 text-primary">{edu.school}</h3>
+                      <p className="text-muted mb-0">
+                        <i className="bi bi-geo-alt me-2"></i>
+                        {edu.location}
+                      </p>
+                    </div>
+                  </div>
+
+                  <div className="mb-3">
+                    <h4 className="h6 text-secondary mb-2">Degree</h4>
+                    <p className="mb-0">
+                      <strong>{edu.degree}</strong> in {edu.field}
+                    </p>
+                  </div>
+
+                  <div className="d-flex justify-content-between align-items-center">
+                    <div>
+                      <h4 className="h6 text-secondary mb-2">Graduation</h4>
+                      <p className="mb-0">
+                        <i className="bi bi-calendar-event me-2"></i>
+                        {edu.year}
+                      </p>
+                    </div>
+                    <div className="text-end">
+                      <h4 className="h6 text-secondary mb-2">GPA</h4>
+                      <p className="mb-0">
+                        <i className="bi bi-star-fill me-2 text-warning"></i>
+                        {edu.gpa}
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
     </div>
   );
 };
