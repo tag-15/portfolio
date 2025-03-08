@@ -38,9 +38,11 @@ const Experience = () => {
   return (
     <div id="experience" className="section animate-fade-in">
       <ScrollReveal animation="up">
-        <div className="text-center mb-5">
+        <div className="text-center mb-4">
           <h2 className="display-6 mb-2">Professional Experience</h2>
-          <p>Building innovative solutions and leading teams to success</p>
+          <p className="text-muted">
+            Building innovative solutions and leading teams to success
+          </p>
         </div>
       </ScrollReveal>
 
@@ -48,110 +50,91 @@ const Experience = () => {
         {experiences.map((exp, index) => (
           <ScrollReveal key={index} animation="up" delay={200}>
             <div className="card mb-4 border-0 shadow-sm overflow-hidden experience-card">
-              <div className="row g-0">
-                <div className="col-lg-4">
-                  <div className="experience-image-wrapper">
-                    <div className="experience-overlay"></div>
-                    <img
-                      src={exp.image}
-                      className="experience-image"
-                      alt="Experience visualization"
-                    />
-                  </div>
-                  <div className="experience-company-info">
-                    <div className="text-white mb-4">
-                      <h3 className="h2 fw-bold mb-1">{exp.title}</h3>
-                      <p className="mb-2 opacity-90">
-                        <i className="bi bi-building me-2"></i>
-                        {exp.company}
-                      </p>
-                      <p className="mb-0 opacity-75 small">
-                        <i className="bi bi-geo-alt me-2"></i>
-                        {exp.location}
-                      </p>
-                    </div>
-                    <div className="d-flex gap-2">
-                      <span className="badge bg-primary">
-                        <i className="bi bi-briefcase me-1"></i>
-                        {exp.type}
-                      </span>
-                      <span className="badge bg-light text-dark">
-                        <i className="bi bi-calendar-event me-1"></i>
-                        {exp.period}
-                      </span>
-                    </div>
-                  </div>
+              {/* Company Info Section */}
+              <div className="experience-company-info">
+                <div className="text-white mb-3">
+                  <h3 className="h2 fw-bold mb-2">{exp.title}</h3>
+                  <p className="mb-2 opacity-90">
+                    <i className="bi bi-building me-2"></i>
+                    {exp.company}
+                  </p>
+                  <p className="mb-2 opacity-75 small">
+                    <i className="bi bi-geo-alt me-2"></i>
+                    {exp.location}
+                  </p>
                 </div>
-
-                <div className="col-lg-8">
-                  <div className="card-body p-4 p-lg-5">
-                    {/* Overview */}
-                    <ScrollReveal animation="right" delay={400}>
-                      <div className="mb-5">
-                        <h4 className="h5 text-primary mb-3">Overview</h4>
-                        <p>{exp.description}</p>
-                      </div>
-                    </ScrollReveal>
-
-                    {/* Technologies */}
-                    <ScrollReveal animation="right" delay={600}>
-                      <div className="mb-5">
-                        <h4 className="h5 text-primary mb-3">
-                          Technologies & Skills
-                        </h4>
-                        <div className="d-flex flex-wrap gap-2 stagger-children">
-                          {exp.technologies.map((tech, idx) => (
-                            <span
-                              key={idx}
-                              className="badge bg-light text-secondary px-3 py-2"
-                            >
-                              {tech}
-                            </span>
-                          ))}
-                        </div>
-                      </div>
-                    </ScrollReveal>
-
-                    {/* Key Achievements */}
-                    <ScrollReveal animation="right" delay={800}>
-                      <div className="mb-5">
-                        <h4 className="h5 text-primary mb-3">
-                          Key Achievements
-                        </h4>
-                        <ul className="list-unstyled mb-0 stagger-children">
-                          {exp.achievements.map((achievement, idx) => (
-                            <li
-                              key={idx}
-                              className="mb-2 d-flex align-items-start"
-                            >
-                              <i className="bi bi-trophy text-warning me-2 mt-1"></i>
-                              <span>{achievement}</span>
-                            </li>
-                          ))}
-                        </ul>
-                      </div>
-                    </ScrollReveal>
-
-                    {/* Responsibilities */}
-                    <ScrollReveal animation="right" delay={1000}>
-                      <div>
-                        <h4 className="h5 text-primary mb-3">
-                          Core Responsibilities
-                        </h4>
-                        <div className="row row-cols-1 row-cols-md-2 g-4 stagger-children">
-                          {exp.responsibilities.map((responsibility, idx) => (
-                            <div key={idx} className="col">
-                              <div className="d-flex align-items-start">
-                                <i className="bi bi-check2-circle text-success me-2 mt-1"></i>
-                                <span>{responsibility}</span>
-                              </div>
-                            </div>
-                          ))}
-                        </div>
-                      </div>
-                    </ScrollReveal>
-                  </div>
+                <div className="d-flex flex-wrap gap-2">
+                  <span className="badge bg-primary">
+                    <i className="bi bi-briefcase me-1"></i>
+                    {exp.type}
+                  </span>
+                  <span className="badge bg-light text-dark">
+                    <i className="bi bi-calendar-event me-1"></i>
+                    {exp.period}
+                  </span>
                 </div>
+              </div>
+
+              {/* Main Content Section */}
+              <div className="card-body p-4">
+                {/* Overview */}
+                <ScrollReveal animation="up" delay={400}>
+                  <div className="mb-4">
+                    <h4 className="h5 text-primary mb-3">Overview</h4>
+                    <p className="text-muted mb-0">{exp.description}</p>
+                  </div>
+                </ScrollReveal>
+
+                {/* Technologies */}
+                <ScrollReveal animation="up" delay={500}>
+                  <div className="mb-4">
+                    <h4 className="h5 text-primary mb-3">
+                      Technologies & Skills
+                    </h4>
+                    <div className="d-flex flex-wrap gap-2">
+                      {exp.technologies.map((tech, idx) => (
+                        <span
+                          key={idx}
+                          className="badge bg-light text-secondary px-3 py-2"
+                        >
+                          {tech}
+                        </span>
+                      ))}
+                    </div>
+                  </div>
+                </ScrollReveal>
+
+                {/* Key Achievements */}
+                <ScrollReveal animation="up" delay={600}>
+                  <div className="mb-4">
+                    <h4 className="h5 text-primary mb-3">Key Achievements</h4>
+                    <ul className="list-unstyled mb-0">
+                      {exp.achievements.map((achievement, idx) => (
+                        <li key={idx} className="mb-3 d-flex align-items-start">
+                          <i className="bi bi-trophy text-warning me-2 mt-1"></i>
+                          <span className="text-muted">{achievement}</span>
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+                </ScrollReveal>
+
+                {/* Responsibilities */}
+                <ScrollReveal animation="up" delay={700}>
+                  <div>
+                    <h4 className="h5 text-primary mb-3">
+                      Core Responsibilities
+                    </h4>
+                    <div className="d-flex flex-column gap-3">
+                      {exp.responsibilities.map((responsibility, idx) => (
+                        <div key={idx} className="d-flex align-items-start">
+                          <i className="bi bi-check2-circle text-success me-2 mt-1"></i>
+                          <span className="text-muted">{responsibility}</span>
+                        </div>
+                      ))}
+                    </div>
+                  </div>
+                </ScrollReveal>
               </div>
             </div>
           </ScrollReveal>
