@@ -9,7 +9,6 @@ const Education = () => {
       field: "Computer Science",
       year: "2025",
       logo: uta,
-      gpa: "3.8/4.0",
       location: "Arlington, TX",
     },
     {
@@ -18,7 +17,6 @@ const Education = () => {
       field: "Computer Science and Engineering",
       year: "2022",
       logo: vitap,
-      gpa: "8.5/10.0",
       location: "Amaravati, India",
     },
   ];
@@ -66,13 +64,6 @@ const Education = () => {
                       <p className="mb-0">
                         <i className="bi bi-calendar-event me-2"></i>
                         {edu.year}
-                      </p>
-                    </div>
-                    <div className="text-end">
-                      <h4 className="h6 text-secondary mb-2">GPA</h4>
-                      <p className="mb-0">
-                        <i className="bi bi-star-fill me-2 text-warning"></i>
-                        {edu.gpa}
                       </p>
                     </div>
                   </div>

@@ -1,48 +1,40 @@
 const Projects = () => {
   const projects = [
     {
-      title: "Health And Fitness Tracker",
+      title: "Device Security Using Deepface",
       description:
-        "A comprehensive health and fitness tracking application that helps users monitor their daily activities, nutrition, and workout progress.",
-      language: "TypeScript",
-      tags: ["React", "Node.js", "MongoDB"],
+        "Implemented face recognition model which emails an error message and powers off the system if an unknown face is detected",
+      language: "Python",
+      tags: ["Python", "Tensorflow", "OpenCV"],
       stars: 12,
       forks: 5,
-      githubLink: "#",
-      demoLink: "#",
     },
     {
-      title: "Online Lung Cancer Survey",
+      title: "Secure Electronic Voting Machine, VIT-AP",
       description:
-        "An interactive survey platform for collecting and analyzing lung cancer risk factors and patient data.",
-      language: "Python",
-      tags: ["Angular", "Python", "ML"],
+        "A secure electronic voting machine that allows users to cast votes securely and transparently.",
+      language: "C",
+      tags: ["C", "Arduino"],
       stars: 8,
       forks: 3,
-      githubLink: "#",
-      demoLink: "#",
     },
     {
-      title: "Cloud Infrastructure Management",
+      title: "Health And Fitness Application, UTA",
       description:
-        "Automated cloud infrastructure deployment and management system using modern DevOps practices.",
-      language: "TypeScript",
-      tags: ["AWS", "Terraform", "Docker"],
+        "This application helps end-users track their workout goals, weight and monitor their progress. This application can be integrated with devices like Fitbit, Apple Watch, Google Fit etc.",
+      language: "Java",
+      tags: ["Java", "Spring"],
       stars: 15,
       forks: 7,
-      githubLink: "#",
-      demoLink: "#",
     },
     {
       title: "Portfolio Website",
       description:
         "A modern, responsive portfolio website built with React and TypeScript showcasing my projects and skills.",
-      language: "TypeScript",
-      tags: ["React", "TypeScript", "Bootstrap"],
+      language: "React",
+      tags: ["React", "TypeScript", "Bootstrap", "AWS"],
       stars: 10,
       forks: 4,
-      githubLink: "#",
-      demoLink: "#",
     },
   ];
 
@@ -55,9 +47,7 @@ const Projects = () => {
             <div key={index} className="col-md-6">
               <div className="project-card">
                 <div className="project-content">
-                  <a href={project.githubLink} className="project-title">
-                    {project.title}
-                  </a>
+                  <p className="project-title text-primary">{project.title}</p>
                   <p className="project-description">{project.description}</p>
 
                   <div className="project-tech-stack">
@@ -83,17 +73,6 @@ const Projects = () => {
                       <i className="bi bi-git"></i>
                       {project.forks}
                     </div>
-                  </div>
-
-                  <div className="project-links">
-                    <a href={project.githubLink} className="project-link">
-                      <i className="bi bi-github"></i>
-                      View Source
-                    </a>
-                    <a href={project.demoLink} className="project-link">
-                      <i className="bi bi-box-arrow-up-right"></i>
-                      Live Demo
-                    </a>
                   </div>
                 </div>
               </div>

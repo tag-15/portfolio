@@ -92,17 +92,6 @@ const Certifications = () => {
                       ))}
                     </div>
                   </div>
-
-                  {/* Verify Button */}
-                  <a
-                    href={cert.link}
-                    className={`btn btn-${cert.color} btn-sm w-100`}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                  >
-                    <i className="bi bi-patch-check-fill me-2"></i>
-                    Verify Certificate
-                  </a>
                 </div>
               </div>
             </div>
